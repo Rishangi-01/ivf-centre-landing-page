@@ -1,8 +1,9 @@
-
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import {
   FaInstagram,
   FaYoutube,
@@ -22,18 +23,35 @@ const socialIcons: Record<string, IconType> = {
 export default function Footer() {
   const reduceMotion = useReducedMotion();
   const socialLinks = site.site.socials;
-  const policyLinks = site.footer.columns[0].links.slice(1);
+  const quickLinks = [
+    ...site.footer.columns[0].links.slice(1).map((link) =>
+      link.label === "Contact Us" ? { ...link, label: "Contact" } : link,
+    ),
+    { label: "Gallery", href: "#gallery" },
+  ];
+  const phone = site.site.phones[0];
+  const email = site.site.emails[0];
+  const address = site.site.addressLines.join(" ");
+  const poweredByIndex = site.footer.copyright.indexOf(" Powered By ");
+  const copyright =
+    poweredByIndex === -1
+      ? site.footer.copyright
+      : site.footer.copyright.slice(0, poweredByIndex);
+  const poweredBy =
+    poweredByIndex === -1
+      ? null
+      : site.footer.copyright.slice(poweredByIndex + 1);
 
   const reveal = {
     hidden: {
       opacity: 0,
-      y: reduceMotion ? 0 : 24,
+      y: reduceMotion ? 0 : 20,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: reduceMotion ? 0 : 0.7,
+        duration: reduceMotion ? 0 : 0.6,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
@@ -44,32 +62,17 @@ export default function Footer() {
       className="relative isolate overflow-hidden bg-[#8c5b53] text-[#f7f0e9]"
       aria-label={site.footer.ariaLabel}
     >
-      {/* Decorative background glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-white/[0.06] blur-3xl"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-48 -left-32 h-96 w-96 rounded-full bg-[#5f3832]/20 blur-3xl"
+      />
 
-      <div className="relative mx-auto max-w-[1800px] px-6 pb-7 pt-8 sm:px-10 sm:pt-10 lg:px-[3.8%] lg:pt-7">
-        {/* Large brand name */}
-        <motion.div
-          variants={reveal}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <Link
-            href={site.nav.links[0].href}
-            aria-label={site.site.name}
-            className="inline-block font-sans text-5xl font-normal tracking-[-0.055em] transition-opacity duration-300 hover:opacity-75 sm:text-6xl lg:text-[76px] xl:text-[84px]"
-          >
-            {site.site.name}
-          </Link>
-          <p className="text-sm lg:text-lg">{site.footer.about}</p>
-        </motion.div>
-
-        <div className="mt-16 grid grid-cols-1 gap-12 sm:mt-20 sm:grid-cols-2 sm:gap-10 lg:mt-24 lg:grid-cols-[1fr_1fr] lg:gap-16">
-          {/* Contact details */}
+      <div className="relative mx-auto max-w-[1600px] px-6 pb-6 pt-14 sm:px-10 sm:pt-16 lg:px-12 lg:pt-20 xl:px-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:grid-cols-3 lg:gap-14">
           <motion.div
             variants={reveal}
             initial="hidden"
@@ -77,33 +80,29 @@ export default function Footer() {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col items-start"
           >
-            <div className="space-y-1 text-base leading-relaxed sm:text-lg">
-              <a
-                href={`tel:${site.site.phones[0].replace(/[^\d+]/g, "")}`}
-                className="block w-fit transition-colors duration-300 hover:text-white"
-              >
-                {site.site.phones[0]}
-              </a>
+            <Link
+              href={site.nav.links[0].href}
+              aria-label={`${site.site.name} home`}
+              className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80"
+            >
+              <Image
+                src={site.site.logoWhite}
+                alt=""
+                width={184}
+                height={64}
+                className="w-[230px] object-contain"
+              />
+              {/* <span className="font-serif text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+                {site.site.name}
+              </span> */}
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-7 text-[#f7f0e9]/80 sm:text-base">
+              Compassionate, personalized fertility care and advanced IVF
+              treatment, supporting you at every step of your journey to
+              parenthood.
+            </p>
 
-              <a
-                href={`mailto:${site.site.emails[0]}`}
-                className="block w-fit transition-colors duration-300 hover:text-white"
-              >
-                {site.site.emails[0]}
-              </a>
-            </div>
-
-            <address className="mt-7 not-italic text-base leading-relaxed sm:text-lg">
-              {site.site.addressLines.map((line, index) => (
-                <span key={line}>
-                  {index > 0 && <br />}
-                  {line}
-                </span>
-              ))}
-            </address>
-
-            {/* Social icons */}
-            <div className="mt-10 flex flex-wrap items-center gap-3 sm:mt-16">
+            <div className="mt-6 flex items-center gap-3">
               {socialLinks.map((social, index) => {
                 const Icon = socialIcons[social.icon];
                 if (!Icon) {
@@ -117,91 +116,126 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    initial={{
-                      opacity: 0,
-                      y: reduceMotion ? 0 : 12,
-                    }}
+                    initial={{ opacity: 0, y: reduceMotion ? 0 : 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
-                      duration: reduceMotion ? 0 : 0.4,
-                      delay: reduceMotion ? 0 : index * 0.08,
+                      duration: reduceMotion ? 0 : 0.35,
+                      delay: reduceMotion ? 0 : index * 0.06,
                     }}
                     whileHover={
-                      reduceMotion
-                        ? undefined
-                        : { y: -5, scale: 1.08 }
+                      reduceMotion ? undefined : { y: -4, scale: 1.06 }
                     }
-                    whileTap={
-                      reduceMotion ? undefined : { scale: 0.92 }
-                    }
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f7f0e9] text-[#65514a] transition-colors duration-300 hover:bg-white sm:h-10 sm:w-10"
+                    whileTap={reduceMotion ? undefined : { scale: 0.94 }}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors duration-300 hover:border-white/50 hover:bg-white hover:text-[#8c5b53]"
                   >
-                    <Icon size={19} />
+                    <Icon size={17} />
                   </motion.a>
                 );
               })}
             </div>
           </motion.div>
 
-          {/* Policy links */}
           <motion.div
             variants={reveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col items-start sm:pt-0"
+            className="md:pt-1"
           >
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65">
+              Quick Links
+            </h2>
             <nav
               aria-label={site.footer.policyAriaLabel}
-              className="flex flex-col items-start gap-1.5 text-base sm:text-lg"
+              className="mt-5 flex flex-col items-start gap-3"
             >
-              {policyLinks.map((policy, index) => (
+              {quickLinks.map((link, index) => (
                 <motion.div
-                  key={policy.label}
-                  initial={{
-                    opacity: 0,
-                    x: reduceMotion ? 0 : 14,
-                  }}
+                  key={link.label}
+                  initial={{ opacity: 0, x: reduceMotion ? 0 : 10 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{
-                    duration: reduceMotion ? 0 : 0.45,
-                    delay: reduceMotion ? 0 : index * 0.09,
+                    duration: reduceMotion ? 0 : 0.35,
+                    delay: reduceMotion ? 0 : index * 0.05,
                   }}
                 >
                   <Link
-                    href={policy.href}
-                    className="group relative inline-block py-0.5 transition-colors duration-300 hover:text-white"
+                    href={link.href}
+                    className="group inline-flex items-center gap-2 text-[15px] text-[#f7f0e9]/85 transition-colors duration-300 hover:text-white"
                   >
-                    {policy.label}
-                    <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                    <ArrowRight
+                      size={14}
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                    <span>{link.label}</span>
                   </Link>
                 </motion.div>
               ))}
             </nav>
           </motion.div>
+
+          <motion.div
+            variants={reveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="md:col-span-2 lg:col-span-1"
+          >
+            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65">
+              Contact Information
+            </h2>
+            <address className="mt-5 not-italic">
+              <ul className="space-y-5">
+                <li>
+                  <a
+                    href={`tel:${phone.replace(/[^\d+]/g, "")}`}
+                    className="group flex items-start gap-3 text-sm text-[#f7f0e9]/85 transition-colors duration-300 hover:text-white sm:text-base"
+                  >
+                    <Phone
+                      size={19}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-white/75 transition-colors group-hover:text-white"
+                    />
+                    <span>{phone}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${email}`}
+                    className="group flex items-start gap-3 text-sm text-[#f7f0e9]/85 transition-colors duration-300 hover:text-white sm:text-base"
+                  >
+                    <Mail
+                      size={19}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-white/75 transition-colors group-hover:text-white"
+                    />
+                    <span>{email}</span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-3 text-sm leading-6 text-[#f7f0e9]/85 sm:text-base">
+                  <MapPin
+                    size={19}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0 text-white/75"
+                  />
+                  <span>{address}</span>
+                </li>
+              </ul>
+            </address>
+          </motion.div>
         </div>
 
-        {/* Bottom copyright */}
         <motion.div
-          initial={{
-            opacity: 0,
-            y: reduceMotion ? 0 : 15,
-          }}
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{
-            duration: reduceMotion ? 0 : 0.6,
-            delay: reduceMotion ? 0 : 0.15,
-          }}
-          className="mt-12 border-t border-white/15 pt-6 sm:mt-14 lg:mt-16 lg:border-t-0 lg:pt-0"
+          transition={{ duration: reduceMotion ? 0 : 0.5 }}
+          className="mt-12 flex flex-col gap-2 border-t border-white/20 pt-5 text-sm text-[#f7f0e9]/75 sm:mt-14 sm:flex-row sm:items-center sm:justify-between sm:pt-6"
         >
-          <div className="flex flex-col gap-3 text-sm leading-relaxed sm:text-base lg:flex-row lg:items-center lg:justify-end lg:pr-[22%]">
-            <p>
-              {site.footer.copyright}
-            </p>
-          </div>
+          <p>{copyright} {poweredBy}</p>
         </motion.div>
       </div>
     </footer>

@@ -1,15 +1,19 @@
-
 "use client";
 
+import { Suspense } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { site } from "@/data";
 
+import "swiper/css";
+
 const itemPositions = [
-  "mt-16 lg:mt-20",
-  "mt-0 lg:-mt-1",
-  "mt-16 lg:mt-20",
-  "mt-0 lg:-mt-1",
+  "pt-8 sm:pt-12",
+  "pt-0",
+  "pt-8 sm:pt-12",
+  "pt-0",
 ];
 
 export default function WellnessGallery() {
@@ -18,52 +22,94 @@ export default function WellnessGallery() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-[#f4f4f2] py-12 sm:py-16 lg:min-h-[740px] lg:py-[62px] w-[100%]">
-      
+    <section
+      id="gallery"
+      className="relative w-full overflow-hidden bg-[#f4f4f2] py-16 sm:py-20 lg:py-24"
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#8c5b53]/[0.04] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14">
-        
-        <div className="grid grid-cols-2 items-start gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-[34px]">
-          {galleryItems.map((item, index) => (
-            <motion.div
-              key={item.src}
-              initial={{
-                opacity: 0,
-                y: reduceMotion ? 0 : 45,
-              }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: reduceMotion ? 0 : 0.8,
-                delay: reduceMotion ? 0 : 0.1 + index * 0.15,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              className={`group relative w-full overflow-hidden bg-[#e7e3df] ${itemPositions[index]}`}
-            >
-              <div
-                className={`relative w-full overflow-hidden ${
-                  index % 2 === 0
-                    ? "aspect-[3/3.85]"
-                    : "aspect-[3/3.85]"
-                }`}
-              >
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 639px) 46vw, (max-width: 1023px) 46vw, 25vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2e211d]/35 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10 xl:px-14">
+        <motion.div
+          initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: reduceMotion ? 0 : 0.65 }}
+          className="mb-10 text-center sm:mb-14 lg:mb-16"
+        >
+          <h2 className="text-3xl font-semibold tracking-[0.14em] text-[#302624] sm:text-4xl lg:text-5xl">
+            OUR GALLERY
+          </h2>
+          <span
+            aria-hidden="true"
+            className="mx-auto mt-4 block h-[3px] w-12 rounded-full bg-[#8c5b53]"
+          />
+        </motion.div>
+
+        <Suspense
+          fallback={
+            <div
+              className="h-[370px] sm:h-[440px] lg:h-[500px]"
+              aria-hidden="true"
+            />
+          }
+        >
+          <Swiper
+            modules={[Autoplay]}
+            loop
+            grabCursor
+            speed={850}
+            autoplay={
+              reduceMotion
+                ? false
+                : {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                  }
+            }
+            slidesPerView={1.12}
+            spaceBetween={16}
+            breakpoints={{
+              480: {
+                slidesPerView: 1.55,
+                spaceBetween: 18,
+              },
+              640: {
+                slidesPerView: 2.3,
+                spaceBetween: 20,
+              },
+              900: {
+                slidesPerView: 3.2,
+                spaceBetween: 24,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 28,
+              },
+            }}
+            className="!overflow-hidden"
+          >
+            {galleryItems.map((item, index) => (
+              <SwiperSlide key={item.src}>
+                <div className={itemPositions[index % itemPositions.length]}>
+                  <div className="group relative h-[350px] overflow-hidden rounded-[4px] bg-[#e7e3df] sm:h-[420px] lg:h-[470px]">
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 479px) 88vw, (max-width: 639px) 64vw, (max-width: 899px) 43vw, (max-width: 1199px) 31vw, 24vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.045]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2e211d]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Suspense>
       </div>
     </section>
   );

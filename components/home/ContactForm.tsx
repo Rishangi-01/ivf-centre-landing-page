@@ -48,7 +48,7 @@ export default function ContactForm() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#faf8f6] lg:mt-8">
       <section id="contact" className="relative min-h-screen">
-        <div className="absolute inset-x-0 top-0 h-[58vh] min-h-[350px] overflow-hidden sm:h-[65vh] lg:h-[72vh]">
+        <div className="absolute inset-x-0 top-0 h-[58vh] min-h-[350px] overflow-hidden sm:h-[65vh] lg:h-[100%]">
           <Image
             src={form.backgroundImage}
             alt={form.backgroundImageAlt}
@@ -71,7 +71,7 @@ export default function ContactForm() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="hidden self-center pr-10 text-[#8c5b53] lg:col-span-4 lg:block"
+            className="hidden self-center pr-10 text-[#000] lg:col-span-4 lg:block"
           >
 
             <h1 className="mt-7 font-serif text-6xl leading-[1.08] xl:text-7xl">
@@ -82,11 +82,11 @@ export default function ContactForm() {
 
             <div className="mt-10 space-y-5">
               <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/10 backdrop-blur-md">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#000] bg-white/10 backdrop-blur-md">
                   <Mail size={21} />
                 </div>
                 <div>
-                  <p className="text-sm text-[#8c5b53]">{form.emailLabel}</p>
+                  <p className="text-sm text-[[#000]]">{form.emailLabel}</p>
                   <p className="mt-1 font-medium">{form.emailValue}</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   <Phone size={21} />
                 </div>
                 <div>
-                  <p className="text-sm text-[#8c5b53]">{form.phoneLabel}</p>
+                  <p className="text-sm text-[[#000]]">{form.phoneLabel}</p>
                   <p className="mt-1 font-medium">{form.phoneValue}</p>
                 </div>
               </div>
@@ -115,7 +115,7 @@ export default function ContactForm() {
               delay: reduceMotion ? 0 : 0.15,
               ease: "easeOut",
             }}
-            className="relative col-span-1 w-full rounded-2xl border border-white/70 bg-[#dce8eb]/95 p-5 shadow-[0_25px_80px_rgba(25,35,36,0.13)] backdrop-blur-xl sm:rounded-[24px] sm:p-8 md:p-10 lg:col-span-8 lg:col-start-5 lg:p-8 xl:p-10"
+            className="relative col-span-1 w-full rounded-2xl border border-[[#000]] bg-[#dce8eb]/95 p-5 shadow-[0_25px_80px_rgba(25,35,36,0.13)] backdrop-blur-xl sm:rounded-[24px] sm:p-8 md:p-10 lg:col-span-8 lg:col-start-5 lg:p-8 xl:p-10"
           >
             {/* Mobile heading */}
             <div className="mb-8 lg:hidden">
@@ -137,7 +137,7 @@ export default function ContactForm() {
                 {form.heading}
               </h2>
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/70 text-[#8c5b53]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[[#000]] text-[#8c5b53]">
                 <Send size={21} />
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-7 rounded-full bg-[#8c5b53] px-7 py-3 font-medium text-[#8c5b53] transition-all hover:bg-[#713c34]"
+                  className="mt-7 rounded-full bg-[#8c5b53] px-7 py-3 font-medium text-white transition-all hover:bg-[#713c34]"
                 >
                   {site.thankYou.primaryButton.label}
                 </button>
@@ -310,13 +310,13 @@ export default function ContactForm() {
                   </div>
                 </div>
 
-
+                {/* Submit */}
                 <div className="mt-7 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center">
                   <motion.button
                     whileHover={reduceMotion ? undefined : { scale: 1.02 }}
                     whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                     type="submit"
-                    className="group inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-full bg-[#8c5b53] px-8 py-4 text-base font-medium text-[#8c5b53] shadow-lg shadow-[#8c5b53]/15 transition-all duration-300 hover:bg-[#713c34] hover:shadow-xl sm:w-[270px]"
+                    className="group inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-full bg-[#8c5b53] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#8c5b53]/15 transition-all duration-300 hover:bg-[#713c34] hover:shadow-xl sm:w-[270px]"
                   >
                     {form.submitLabel}
                     <ArrowRight
