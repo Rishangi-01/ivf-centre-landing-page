@@ -45,9 +45,8 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden bg-[#fff8f4] px-5 py-16 text-[#8c5b53] sm:px-8 sm:py-20 lg:px-12 lg:py-12"
+      className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden bg-[#fff8f4] px-5 py-16 text-[#8c5b53] sm:px-0 sm:py-20 lg:px-0 lg:py-12 w-[100%]"
     >
-      {/* Decorative background shapes */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-36 -top-48 -z-10 h-[420px] w-[420px] rounded-full bg-[#f5e4dc]/65 blur-2xl sm:h-[560px] sm:w-[560px]"
@@ -58,7 +57,7 @@ export default function WhyChooseUs() {
         className="pointer-events-none absolute -bottom-48 -right-36 -z-10 h-[420px] w-[420px] rounded-full bg-[#f4e0d7]/55 blur-2xl sm:h-[560px] sm:w-[560px]"
       />
 
-      <div className="mx-auto w-full">
+      <div className="mx-auto w-full max-w-[1600px]">
         {/* Section heading */}
         <motion.div
           variants={reveal}

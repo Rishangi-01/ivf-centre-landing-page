@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 w-full">
-      <div className="relative mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-6 lg:px-10 lg:py-6 xl:px-14">
+      <div className="relative mx-auto flex max-w-[1600px] items-center justify-between px-6 py-4 sm:px-0 lg:px-0 lg:py-6 xl:px-0">
         <Link
           href={site.nav.links[0].href}
           aria-label={`${site.site.name} home`}

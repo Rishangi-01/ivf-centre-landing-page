@@ -28,7 +28,7 @@ export default function FAQSection() {
         className="pointer-events-none absolute -bottom-32 right-0 h-96 w-96 rounded-full bg-[#8c5b53]/[0.05] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1200px]">
+      <div className="relative mx-auto max-w-[1300px]">
 
         {/* Section heading */}
         <motion.div

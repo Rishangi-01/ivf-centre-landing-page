@@ -26,7 +26,7 @@ export default function MedicalServices() {
         className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#8c5b53]/[0.06] blur-3xl"
       />
 
-      <div className="relative mx-auto px-6 sm:px-6 lg:px-10 xl:px-14 py-6 sm:py-10 md:py-8 lg:py-24">
+      <div className="relative mx-auto px-6 sm:px-0 lg:px-0 xl:px-0 py-6 sm:py-10 md:py-8 lg:py-24 max-w-[1600px]">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-[0.9fr_1.1fr] md:gap-5 lg:grid-cols-[0.95fr_1.6fr] lg:gap-12">
           <div className="min-w-0 lg:sticky lg:top-8 lg:h-fit lg:self-start">
             <motion.div

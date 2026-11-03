@@ -47,7 +47,7 @@ export default function ContactForm() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#faf8f6] lg:mt-8">
-      <section id="contact" className="relative min-h-screen">
+      <section id="contact" className="relative min-h-screen w-[100%]">
         <div className="absolute inset-x-0 top-0 h-[58vh] min-h-[350px] overflow-hidden sm:h-[65vh] lg:h-[100%]">
           <Image
             src={form.backgroundImage}

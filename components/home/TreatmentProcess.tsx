@@ -35,7 +35,7 @@ export default function TreatmentProcess() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#fff6f5] px-4 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+    <section className="relative isolate overflow-hidden bg-[#fff6f5] px-4 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24 w-[100%]">
 
       
       <div className="pointer-events-none absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#8c5b53]/[0.06] blur-3xl" />
@@ -164,7 +164,7 @@ export default function TreatmentProcess() {
               onSlideChange={(swiper) => {
                 setActiveIndex(swiper.realIndex % treatmentProcessData.steps.length);
               }}
-              className="!pb-12 !pt-5 lg:max-w-[1400px] !overflow-hidden"
+              className="!pb-12 !pt-5 lg:max-w-[1600px] !overflow-hidden"
             >
               {repeatedSteps.map((step, index) => {
                 const Icon = treatmentIcons[step.icon];

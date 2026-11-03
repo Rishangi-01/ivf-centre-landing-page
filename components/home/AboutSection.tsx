@@ -30,7 +30,7 @@ export default function AboutSection() {
         className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-[#5f3832]/20 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-6 md:grid-cols-[1fr_1fr] md:gap-8 lg:min-h-[540px] lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+      <div className="relative mx-auto grid max-w-[1600px] grid-cols-1 items-center gap-6 md:grid-cols-[1fr_1fr] md:gap-8 lg:min-h-[540px] lg:grid-cols-[1.1fr_1fr] lg:gap-14">
         
         <motion.div
           initial="hidden"

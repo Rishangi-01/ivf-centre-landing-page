@@ -31,7 +31,7 @@ export default function WellnessGallery() {
         className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#8c5b53]/[0.04] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-10 xl:px-14">
+      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-0 lg:px-0 xl:px-0">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}
