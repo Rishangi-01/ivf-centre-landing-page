@@ -19,6 +19,8 @@ const itemPositions = [
 export default function WellnessGallery() {
   const galleryItems =
     site.Insurance.sections.Gallery.variants.InsuranceGallery1.items;
+  const galleryTitle =
+    site.Insurance.sections.Gallery.variants.InsuranceGallery1.title;
   const reduceMotion = useReducedMotion();
 
   return (
@@ -40,7 +42,7 @@ export default function WellnessGallery() {
           className="mb-10 text-center sm:mb-14 lg:mb-16"
         >
           <h2 className="font-serif text-4xl font-normal leading-tight tracking-tight text-[#302624] sm:text-5xl lg:text-6xl">
-            Our Gallery
+            {galleryTitle}{" "}
           </h2>
           <span
             aria-hidden="true"

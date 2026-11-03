@@ -2661,6 +2661,9 @@
       "Gallery": {
         "variants": {
           "InsuranceGallery1": {
+            "title": [
+              "Our Gallery"
+            ],
             "items": [
               {
                 "src": "/images/home/wellness1.webp",
