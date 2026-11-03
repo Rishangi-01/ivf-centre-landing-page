@@ -59,7 +59,7 @@ export default function TreatmentProcess() {
         </svg>
       </div>
 
-      <div className="relative mx-auto lg:max-w-[1600px] max-w-[400px]">
+      <div className="relative mx-auto lg:max-w-[1600px] xl:max-w-[1800px] max-w-[400px]">
 
 
         <motion.div

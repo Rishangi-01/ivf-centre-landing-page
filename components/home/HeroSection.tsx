@@ -22,7 +22,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative isolate lg:min-h-[520px] h-[420px] overflow-hidden bg-[#fff9f6] sm:min-h-[600px] lg:min-h-[620px] max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
+    <section className="relative isolate lg:min-h-[520px] h-[420px] overflow-hidden bg-[#fff9f6] sm:min-h-[600px] lg:min-h-[620px] px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
       
       <div
         aria-hidden="true"

@@ -18,7 +18,7 @@ export default function AboutSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative isolate overflow-hidden bg-[#8c5b53] py-14 text-white sm:py-20 lg:min-h-[620px] lg:py-10 max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
+    <section id="about" className="relative isolate overflow-hidden bg-[#8c5b53] py-14 text-white sm:py-20 lg:min-h-[620px] lg:py-10 px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
 
       <div
         aria-hidden="true"

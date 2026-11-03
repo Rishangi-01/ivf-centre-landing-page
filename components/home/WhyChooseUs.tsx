@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
         className="pointer-events-none absolute -bottom-48 -right-36 -z-10 h-[420px] w-[420px] rounded-full bg-[#f4e0d7]/55 blur-2xl sm:h-[560px] sm:w-[560px]"
       />
 
-      <div className="mx-auto w-full max-w-[1700px]">
+      <div className="mx-auto w-full">
         {/* Section heading */}
         <motion.div
           variants={reveal}

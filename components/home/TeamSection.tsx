@@ -26,7 +26,7 @@ export default function TeamSection() {
         className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-[#b9b4f5]/35 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14">
+      <div className="relative mx-auto px-6 sm:px-6 lg:px-10 xl:px-14">
         
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 35 }}

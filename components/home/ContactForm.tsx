@@ -66,7 +66,7 @@ export default function ContactForm() {
           aria-hidden="true"
           className="pointer-events-none absolute right-[-100px] top-[20%] h-72 w-72 rounded-full bg-[#8c5b53]/10 blur-3xl"
         />
-        <div className="relative mx-auto grid min-h-screen max-w-[1600px] grid-cols-1 items-start px-4 pb-8 pt-[22vh] sm:px-8 sm:pt-[24vh] lg:grid-cols-12 lg:px-12 lg:pt-[22vh]">
+        <div className="relative mx-auto grid min-h-screen grid-cols-1 items-start px-4 pb-8 pt-[22vh] sm:px-8 sm:pt-[24vh] lg:grid-cols-12 lg:px-12 lg:pt-[22vh]">
           <motion.div
             variants={fadeUp}
             initial="hidden"

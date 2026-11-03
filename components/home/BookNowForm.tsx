@@ -74,7 +74,7 @@ export default function BookNowForm() {
           className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#8c5b53]/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid w-full max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-20">
+        <div className="relative mx-auto grid w-full px-6 sm:px-6 lg:px-10 xl:px-14 grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-20">
 
           <motion.div
             initial="hidden"
