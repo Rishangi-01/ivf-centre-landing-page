@@ -39,8 +39,8 @@ export default function WellnessGallery() {
           transition={{ duration: reduceMotion ? 0 : 0.65 }}
           className="mb-10 text-center sm:mb-14 lg:mb-16"
         >
-          <h2 className="text-3xl font-semibold tracking-[0.14em] text-[#302624] sm:text-4xl lg:text-5xl">
-            OUR GALLERY
+          <h2 className="font-serif text-4xl font-normal leading-tight tracking-tight text-[#302624] sm:text-5xl lg:text-6xl">
+            Our Gallery
           </h2>
           <span
             aria-hidden="true"

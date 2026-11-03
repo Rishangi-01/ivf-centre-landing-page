@@ -82,7 +82,7 @@ export default function BookNowForm() {
             variants={fadeUp}
             className="relative"
           >
-            <h1 className="mt-7 max-w-2xl font-serif text-5xl leading-[1.08] tracking-tight text-[#713c34] sm:text-6xl lg:text-6xl xl:text-7xl">
+            <h1 className="font-serif text-4xl font-normal leading-tight tracking-tight text-[#302624] sm:text-5xl lg:text-6xl">
               {page.title[0]}
               <br />
               <span className="italic text-[#8c5b53]">{page.title[1]}</span>

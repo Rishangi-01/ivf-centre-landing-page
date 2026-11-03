@@ -1,6 +1,5 @@
 import AboutSection from "@/components/home/AboutSection";
 import BookNowForm from "@/components/home/BookNowForm";
-import ContactForm from "@/components/home/ContactForm";
 import FAQSection from "@/components/home/FAQSection";
 import HeroSection from "@/components/home/HeroSection";
 import MedicalServices from "@/components/home/MedicalServices";
@@ -22,7 +21,6 @@ export default function Home() {
       <WellnessGallery />
       <FAQSection />
       <BookNowForm />
-      <ContactForm />
     </div>
   );
 }

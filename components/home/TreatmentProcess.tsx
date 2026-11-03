@@ -79,7 +79,7 @@ export default function TreatmentProcess() {
             <span className="h-[2px] w-9 rounded-full bg-[#8c5b53]" />
           </div>
 
-          <h2 className="text-3xl font-bold lg:max-w-4xl max-w-2xl leading-tight tracking-tight text-[#242333] sm:text-4xl lg:text-5xl mx-auto">
+          <h2 className="font-serif text-4xl font-normal leading-tight tracking-tight text-[#302624] sm:text-5xl lg:text-6xl">
             {treatmentProcessData.title}{" "}
             <span className="text-[#8c5b53]">
               {treatmentProcessData.highlight}
