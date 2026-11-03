@@ -22,7 +22,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative isolate min-h-[520px] overflow-hidden bg-[#fff9f6] sm:min-h-[600px] lg:min-h-[620px] w-[100%]">
+    <section className="relative isolate lg:min-h-[520px] h-[420px] overflow-hidden bg-[#fff9f6] sm:min-h-[600px] lg:min-h-[620px] max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
       
       <div
         aria-hidden="true"
@@ -40,7 +40,7 @@ export default function HeroSection() {
         />
       </motion.div>
 
-      <div className="relative mx-auto grid min-h-[520px] max-w-[1600px] grid-cols-1 items-center sm:min-h-[600px] lg:min-h-[620px] lg:grid-cols-2">
+      <div className="relative mx-auto grid min-h-[420px] max-w-[1600px] grid-cols-1 items-center sm:min-h-[600px] lg:min-h-[620px] lg:grid-cols-2">
         
         <motion.div
           initial="hidden"
@@ -53,7 +53,7 @@ export default function HeroSection() {
               },
             },
           }}
-          className="relative z-10 order-2 px-6 pb-12 pt-4 sm:px-10 lg:order-1 lg:px-14 lg:py-16 xl:px-20"
+          className="relative z-10 order-2 pb-12 pt-4 lg:order-1 lg:py-16"
         >
 
           <motion.h1
@@ -80,10 +80,10 @@ export default function HeroSection() {
             duration: shouldReduceMotion ? 0 : 1.1,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="relative order-1 h-[300px] overflow-hidden sm:h-[410px] lg:order-2 lg:h-full lg:min-h-[620px]"
+          className="relative order-1 lg:h-[300px] h-[0px] overflow-hidden sm:h-[410px] lg:order-2 lg:h-full lg:min-h-[620px]"
         >
 
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#fff9f6]/35 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#fff9f6]/30 lg:via-transparent lg:to-transparent" />
+          <div className="pointer-events-none absolute inset-0 lg:via-transparent lg:to-transparent" />
         </motion.div>
       </div>
     </section>

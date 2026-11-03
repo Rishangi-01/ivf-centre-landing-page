@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { site } from "@/data";
 
 const collageLayout = [
-  "left-0 top-[25%] h-[245px] w-[220px] sm:h-[270px] sm:w-[235px] lg:left-0 lg:top-[30%] lg:h-[300px] lg:w-[284px]",
+  "left-0 top-[25%] h-[245px] w-[190px] sm:h-[270px] sm:w-[235px] lg:left-0 lg:top-[30%] lg:h-[300px] lg:w-[284px]",
   "right-[3%] top-0 h-[215px] w-[180px] sm:h-[235px] sm:w-[200px] lg:right-[5%] lg:top-0 lg:h-[288px] lg:w-[270px]",
   "right-0 bottom-0 h-[225px] w-[185px] sm:h-[250px] sm:w-[205px] lg:right-0 lg:bottom-0 lg:h-[330px] lg:w-[294px]",
 ];
@@ -18,7 +18,7 @@ export default function AboutSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="relative isolate overflow-hidden bg-[#8c5b53] px-5 py-14 text-white sm:px-8 sm:py-20 lg:min-h-[620px] lg:px-12 lg:py-10 w-[100%]">
+    <section id="about" className="relative isolate overflow-hidden bg-[#8c5b53] py-14 text-white sm:py-20 lg:min-h-[620px] lg:py-10 max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 w-[100%]">
 
       <div
         aria-hidden="true"
@@ -30,7 +30,7 @@ export default function AboutSection() {
         className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-[#5f3832]/20 blur-3xl"
       />
 
-      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-12 md:grid-cols-[1fr_1fr] md:gap-8 lg:min-h-[540px] lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+      <div className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-6 md:grid-cols-[1fr_1fr] md:gap-8 lg:min-h-[540px] lg:grid-cols-[1.1fr_1fr] lg:gap-14">
         
         <motion.div
           initial="hidden"
@@ -79,7 +79,7 @@ export default function AboutSection() {
                 },
               },
             }}
-            className="mt-8 font-serif lg:text-[6rem] font-normal leading-[1.02] tracking-[-0.035em] text-[#fffaf3]"
+            className="mt-8 font-serif lg:text-[6rem] text-[2rem] font-normal leading-[1.02] tracking-[-0.035em] text-[#fffaf3]"
           >
             {homeAbout.title.map((line, index) => (
               <span key={line}>

@@ -64,7 +64,7 @@ export default function BookNowForm() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#fffaf7] text-[#332a28] w-[100%]">
-      <section id="book-appointment" className="relative flex min-h-screen items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-8 xl:px-14">
+      <section id="book-appointment" className="relative flex min-h-screen items-center py-12 sm:py-16 lg:py-8">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -left-36 top-10 h-96 w-96 rounded-full bg-[#ead6ce]/45 blur-3xl"
@@ -74,7 +74,7 @@ export default function BookNowForm() {
           className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-[#8c5b53]/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid w-full max-w-[1450px] grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-20">
+        <div className="relative mx-auto grid w-full max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14 grid-cols-1 items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12 xl:gap-20">
 
           <motion.div
             initial="hidden"

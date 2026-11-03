@@ -71,7 +71,7 @@ export default function ContactForm() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="hidden self-center pr-10 text-white lg:col-span-4 lg:block"
+            className="hidden self-center pr-10 text-[#8c5b53] lg:col-span-4 lg:block"
           >
 
             <h1 className="mt-7 font-serif text-6xl leading-[1.08] xl:text-7xl">
@@ -86,7 +86,7 @@ export default function ContactForm() {
                   <Mail size={21} />
                 </div>
                 <div>
-                  <p className="text-sm text-white/70">{form.emailLabel}</p>
+                  <p className="text-sm text-[#8c5b53]">{form.emailLabel}</p>
                   <p className="mt-1 font-medium">{form.emailValue}</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function ContactForm() {
                   <Phone size={21} />
                 </div>
                 <div>
-                  <p className="text-sm text-white/70">{form.phoneLabel}</p>
+                  <p className="text-sm text-[#8c5b53]">{form.phoneLabel}</p>
                   <p className="mt-1 font-medium">{form.phoneValue}</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function ContactForm() {
                 <button
                   type="button"
                   onClick={() => setIsSubmitted(false)}
-                  className="mt-7 rounded-full bg-[#8c5b53] px-7 py-3 font-medium text-white transition-all hover:bg-[#713c34]"
+                  className="mt-7 rounded-full bg-[#8c5b53] px-7 py-3 font-medium text-[#8c5b53] transition-all hover:bg-[#713c34]"
                 >
                   {site.thankYou.primaryButton.label}
                 </button>
@@ -316,7 +316,7 @@ export default function ContactForm() {
                     whileHover={reduceMotion ? undefined : { scale: 1.02 }}
                     whileTap={reduceMotion ? undefined : { scale: 0.98 }}
                     type="submit"
-                    className="group inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-full bg-[#8c5b53] px-8 py-4 text-base font-medium text-white shadow-lg shadow-[#8c5b53]/15 transition-all duration-300 hover:bg-[#713c34] hover:shadow-xl sm:w-[270px]"
+                    className="group inline-flex min-h-[54px] w-full items-center justify-center gap-3 rounded-full bg-[#8c5b53] px-8 py-4 text-base font-medium text-[#8c5b53] shadow-lg shadow-[#8c5b53]/15 transition-all duration-300 hover:bg-[#713c34] hover:shadow-xl sm:w-[270px]"
                   >
                     {form.submitLabel}
                     <ArrowRight

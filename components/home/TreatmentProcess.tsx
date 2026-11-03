@@ -90,7 +90,7 @@ export default function TreatmentProcess() {
         </svg>
       </div>
 
-      <div className="relative mx-auto max-w-[1600px]">
+      <div className="relative mx-auto lg:max-w-[1600px] max-w-[400px]">
 
 
         <motion.div
@@ -98,9 +98,9 @@ export default function TreatmentProcess() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
-          className="mb-14 text-center sm:mb-16"
+          className="mb-6 text-center lg:mb-16"
         >
-          <div className="mb-3 flex items-center justify-center gap-4">
+          <div className="mb-3 flex items-center justify-center gap-4 lg:max-w-3xl max-w-2xl">
             <span className="h-[2px] w-9 rounded-full bg-[#8c5b53]" />
 
             <span className="text-sm font-bold tracking-wide text-[#8c5b53] sm:text-base">
@@ -110,14 +110,14 @@ export default function TreatmentProcess() {
             <span className="h-[2px] w-9 rounded-full bg-[#8c5b53]" />
           </div>
 
-          <h2 className="text-3xl font-bold leading-tight tracking-tight text-[#242333] sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold lg:max-w-3xl max-w-2xl leading-tight tracking-tight text-[#242333] sm:text-4xl lg:text-5xl">
             A Simple & Supportive{" "}
             <span className="text-[#8c5b53]">
               IVF Journey
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-[#696571] sm:text-base lg:text-lg">
+          <p className="mx-auto mt-4 lg:max-w-3xl max-w-2xl text-sm leading-7 text-[#696571] sm:text-base lg:text-lg">
             A step-by-step, personalized process to guide you
             from consultation to a successful pregnancy.
           </p>

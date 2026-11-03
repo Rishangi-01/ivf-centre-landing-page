@@ -18,14 +18,14 @@ export default function WellnessGallery() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden bg-[#f4f4f2] px-4 py-12 sm:px-6 sm:py-16 lg:min-h-[740px] lg:px-5 lg:py-[62px] w-[100%]">
+    <section className="relative overflow-hidden bg-[#f4f4f2] py-12 sm:py-16 lg:min-h-[740px] lg:py-[62px] w-[100%]">
       
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#8c5b53]/[0.04] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1800px]">
+      <div className="relative mx-auto max-w-[1600px] px-6 sm:px-6 lg:px-10 xl:px-14">
         
         <div className="grid grid-cols-2 items-start gap-x-4 gap-y-8 sm:gap-x-6 lg:grid-cols-4 lg:gap-x-[34px]">
           {galleryItems.map((item, index) => (
