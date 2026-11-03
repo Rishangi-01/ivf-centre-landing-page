@@ -27,7 +27,6 @@ export default function Footer() {
     ...site.footer.columns[0].links.slice(1).map((link) =>
       link.label === "Contact Us" ? { ...link, label: "Contact" } : link,
     ),
-    { label: "Gallery", href: "#gallery" },
   ];
   const phone = site.site.phones[0];
   const email = site.site.emails[0];
@@ -59,7 +58,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative isolate overflow-hidden bg-[#8c5b53] text-[#f7f0e9]"
+      className="relative isolate overflow-hidden bg-[#8c5b53] text-[#f7f0e9] px-6 sm:px-6 lg:px-10 xl:px-14"
       aria-label={site.footer.ariaLabel}
     >
       <div
@@ -71,7 +70,7 @@ export default function Footer() {
         className="pointer-events-none absolute -bottom-48 -left-32 h-96 w-96 rounded-full bg-[#5f3832]/20 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-6 pb-6 pt-14 sm:px-10 sm:pt-16 lg:px-12 lg:pt-20 xl:px-16">
+      <div className="relative mx-auto max-w-[1600px] pb-6 pt-14 sm:pt-16 lg:pt-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:grid-cols-3 lg:gap-14">
           <motion.div
             variants={reveal}

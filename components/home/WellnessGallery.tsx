@@ -26,7 +26,7 @@ export default function WellnessGallery() {
   return (
     <section
       id="gallery"
-      className="relative w-full overflow-hidden bg-[#f4f4f2] py-16 sm:py-20 lg:py-24 px-6 sm:px-6 lg:px-10 xl:px-14"
+      className="relative w-full overflow-hidden bg-[#fffaf7] py-16 sm:py-20 lg:py-24 px-6 sm:px-6 lg:px-10 xl:px-14"
     >
       <div
         aria-hidden="true"
