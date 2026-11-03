@@ -14,7 +14,7 @@ export default function TeamSection() {
   return (
     <section
       id="our-team"
-      className="relative overflow-hidden bg-[#dedcff] py-20 text-[#8c5b53] sm:py-24 lg:py-28 w-[100%]"
+      className="relative overflow-hidden bg-[#dedcff] py-20 text-[#8c5b53] sm:py-24 lg:py-28 w-[100%] px-6 sm:px-6 lg:px-10 xl:px-14"
     >
       <div
         aria-hidden="true"
@@ -26,7 +26,7 @@ export default function TeamSection() {
         className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-[#b9b4f5]/35 blur-3xl"
       />
 
-      <div className="relative mx-auto px-6 sm:px-0 lg:px-0 xl:px-0 max-w-[1600px]">
+      <div className="relative mx-auto max-w-[1600px]">
         
         <motion.div
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 35 }}

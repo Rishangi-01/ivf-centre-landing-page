@@ -24,14 +24,14 @@ export default function WellnessGallery() {
   return (
     <section
       id="gallery"
-      className="relative w-full overflow-hidden bg-[#f4f4f2] py-16 sm:py-20 lg:py-24"
+      className="relative w-full overflow-hidden bg-[#f4f4f2] py-16 sm:py-20 lg:py-24 px-6 sm:px-6 lg:px-10 xl:px-14"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-[#8c5b53]/[0.04] blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-[1600px] px-5 sm:px-0 lg:px-0 xl:px-0">
+      <div className="relative mx-auto max-w-[1600px]">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 20 }}
           whileInView={{ opacity: 1, y: 0 }}

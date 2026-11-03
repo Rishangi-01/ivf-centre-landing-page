@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden bg-[#fff8f4] px-5 py-16 text-[#8c5b53] sm:px-0 sm:py-20 lg:px-0 lg:py-12 w-[100%]"
+      className="relative isolate flex min-h-screen flex-col justify-center overflow-hidden bg-[#fff8f4] py-16 text-[#8c5b53] sm:py-20 lg:py-12 w-[100%] px-6 sm:px-6 lg:px-10 xl:px-14"
     >
       <div
         aria-hidden="true"
