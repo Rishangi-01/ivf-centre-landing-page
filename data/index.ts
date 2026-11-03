@@ -1,6 +1,15 @@
 import originalSiteData from "./site.json";
 
 export type RawSiteData = typeof originalSiteData;
+export const homePageData = originalSiteData.homePage;
+export const treatmentProcessData = homePageData.treatmentProcess;
+export const faqSectionData = homePageData.faqSection;
+export type HomePageData = typeof homePageData;
+export type TreatmentProcessData = typeof treatmentProcessData;
+export type TreatmentStepData = TreatmentProcessData["steps"][number];
+export type FaqSectionData = typeof faqSectionData;
+export type FaqItemData = FaqSectionData["items"][number];
+
 export const commerceData = originalSiteData.Insurance.commerce;
 export const productDetailsData = commerceData.productDetails;
 export const productDetailsHeroData = commerceData.productDetails.hero;

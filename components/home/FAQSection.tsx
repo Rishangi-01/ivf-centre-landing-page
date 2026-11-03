@@ -3,50 +3,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Plus, Minus, MessageCircle, ArrowRight } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What is IVF and how does the process work?",
-    answer:
-      "In Vitro Fertilization (IVF) is a fertility treatment in which eggs and sperm are combined in a laboratory. If fertilization occurs, an embryo may be transferred to the uterus. Your fertility specialist will explain each stage and help determine whether IVF is appropriate for you.",
-  },
-  {
-    question: "Who may benefit from fertility treatment?",
-    answer:
-      "Fertility treatment may be considered for people experiencing difficulties conceiving or those with certain reproductive health conditions. A consultation and appropriate medical assessment help determine the most suitable options.",
-  },
-  {
-    question: "How long does an IVF treatment cycle take?",
-    answer:
-      "The timeline varies depending on your medical history, treatment protocol, and individual response. A treatment cycle may take several weeks, and your doctor will provide a personalized timeline after your assessment.",
-  },
-  {
-    question: "Is IVF treatment painful?",
-    answer:
-      "Experiences differ from person to person. Some stages may involve mild discomfort, and your medical team can explain what to expect and discuss ways to manage discomfort throughout treatment.",
-  },
-  {
-    question: "What tests are required before starting IVF?",
-    answer:
-      "Your doctor may recommend blood tests, ultrasound scans, and other assessments based on your medical history. Testing helps your specialist understand your reproductive health and plan appropriate care.",
-  },
-  {
-    question: "What factors affect the cost of IVF treatment?",
-    answer:
-      "The overall cost depends on the treatment plan, investigations, medications, procedures, and any additional services required. Our team can explain the expected costs before treatment begins.",
-  },
-  {
-    question: "Can I continue my normal routine during treatment?",
-    answer:
-      "Many everyday activities can continue during parts of treatment, but recommendations may change depending on the treatment stage. Follow the guidance provided by your fertility specialist.",
-  },
-  {
-    question: "How can I book an appointment?",
-    answer:
-      "You can contact our care team through the appointment form, phone, or contact page. Our team will help arrange a consultation at a convenient time.",
-  },
-];
+import { Plus, Minus } from "lucide-react";
+import { faqSectionData } from "@/data";
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -84,29 +42,27 @@ export default function FAQSection() {
             <span className="h-[2px] w-8 rounded-full bg-[#8c5b53]" />
 
             <span className="text-sm font-bold uppercase tracking-[0.16em] text-[#8c5b53]">
-              Have Questions?
+              {faqSectionData.eyebrow}
             </span>
 
             <span className="h-[2px] w-8 rounded-full bg-[#8c5b53]" />
           </div>
 
           <h2 className="font-serif text-4xl font-normal leading-tight tracking-tight text-[#302624] sm:text-5xl lg:text-6xl">
-            Frequently Asked{" "}
+            {faqSectionData.title}{" "}
             <span className="text-[#8c5b53]">
-              Questions
+              {faqSectionData.highlight}
             </span>
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#786d69] sm:text-base">
-            Find answers to common questions about fertility,
-            IVF treatments, appointments, and the care we provide.
-            We are here to make your journey easier to understand.
+            {faqSectionData.description}
           </p>
         </motion.div>
 
         {/* FAQ accordion */}
         <div className="mx-auto max-w-[1200px] space-y-4">
-          {faqs.map((faq, index) => {
+          {faqSectionData.items.map((faq, index) => {
             const isOpen = openIndex === index;
 
             return (

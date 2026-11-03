@@ -2683,5 +2683,88 @@
         }
       }
     }
+  },
+  "homePage": {
+    "treatmentProcess": {
+      "eyebrow": "Our Treatment Process",
+      "title": "A Simple & Supportive",
+      "highlight": "IVF Journey",
+      "description": "A step-by-step, personalized process to guide you from consultation to a successful pregnancy.",
+      "previousStepLabel": "Previous treatment step",
+      "nextStepLabel": "Next treatment step",
+      "paginationLabel": "Go to treatment step",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Initial Consultation",
+          "description": "Meet our fertility expert to discuss your concerns, history and treatment options.",
+          "icon": "messageCircle"
+        },
+        {
+          "number": "02",
+          "title": "Fertility Assessment",
+          "description": "A detailed evaluation with required tests to understand your fertility health.",
+          "icon": "clipboardCheck"
+        },
+        {
+          "number": "03",
+          "title": "Personalized Treatment Plan",
+          "description": "A tailored IVF plan designed for your unique needs and best possible results.",
+          "icon": "calendarCheck"
+        },
+        {
+          "number": "04",
+          "title": "IVF Treatment",
+          "description": "Carefully monitored procedures including egg retrieval, fertilization and embryo development.",
+          "icon": "microscope"
+        },
+        {
+          "number": "05",
+          "title": "Pregnancy & Follow-Up",
+          "description": "Embryo transfer and ongoing care with pregnancy testing and continuous support throughout your journey.",
+          "icon": "baby"
+        }
+      ]
+    },
+    "faqSection": {
+      "eyebrow": "Have Questions?",
+      "title": "Frequently Asked",
+      "highlight": "Questions",
+      "description": "Find answers to common questions about fertility, IVF treatments, appointments, and the care we provide. We are here to make your journey easier to understand.",
+      "items": [
+        {
+          "question": "What is IVF and how does the process work?",
+          "answer": "In Vitro Fertilization (IVF) is a fertility treatment in which eggs and sperm are combined in a laboratory. If fertilization occurs, an embryo may be transferred to the uterus. Your fertility specialist will explain each stage and help determine whether IVF is appropriate for you."
+        },
+        {
+          "question": "Who may benefit from fertility treatment?",
+          "answer": "Fertility treatment may be considered for people experiencing difficulties conceiving or those with certain reproductive health conditions. A consultation and appropriate medical assessment help determine the most suitable options."
+        },
+        {
+          "question": "How long does an IVF treatment cycle take?",
+          "answer": "The timeline varies depending on your medical history, treatment protocol, and individual response. A treatment cycle may take several weeks, and your doctor will provide a personalized timeline after your assessment."
+        },
+        {
+          "question": "Is IVF treatment painful?",
+          "answer": "Experiences differ from person to person. Some stages may involve mild discomfort, and your medical team can explain what to expect and discuss ways to manage discomfort throughout treatment."
+        },
+        {
+          "question": "What tests are required before starting IVF?",
+          "answer": "Your doctor may recommend blood tests, ultrasound scans, and other assessments based on your medical history. Testing helps your specialist understand your reproductive health and plan appropriate care."
+        },
+        {
+          "question": "What factors affect the cost of IVF treatment?",
+          "answer": "The overall cost depends on the treatment plan, investigations, medications, procedures, and any additional services required. Our team can explain the expected costs before treatment begins."
+        },
+        {
+          "question": "Can I continue my normal routine during treatment?",
+          "answer": "Many everyday activities can continue during parts of treatment, but recommendations may change depending on the treatment stage. Follow the guidance provided by your fertility specialist."
+        },
+        {
+          "question": "How can I book an appointment?",
+          "answer": "You can contact our care team through the appointment form, phone, or contact page. Our team will help arrange a consultation at a convenient time."
+        }
+      ]
+    }
   }
 }

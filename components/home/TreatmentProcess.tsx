@@ -11,55 +11,24 @@ import {
   CalendarCheck,
   Microscope,
   Baby,
+  type LucideIcon,
 } from "lucide-react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import { treatmentProcessData } from "@/data";
 
 import "swiper/css";
 
-const treatmentSteps = [
-  {
-    number: "01",
-    title: "Initial Consultation",
-    description:
-      "Meet our fertility expert to discuss your concerns, history and treatment options.",
-    icon: MessageCircle,
-  },
-  {
-    number: "02",
-    title: "Fertility Assessment",
-    description:
-      "A detailed evaluation with required tests to understand your fertility health.",
-    icon: ClipboardCheck,
-  },
-  {
-    number: "03",
-    title: "Personalized Treatment Plan",
-    description:
-      "A tailored IVF plan designed for your unique needs and best possible results.",
-    icon: CalendarCheck,
-  },
-  {
-    number: "04",
-    title: "IVF Treatment",
-    description:
-      "Carefully monitored procedures including egg retrieval, fertilization and embryo development.",
-    icon: Microscope,
-  },
-  {
-    number: "05",
-    title: "Pregnancy & Follow-Up",
-    description:
-      "Embryo transfer and ongoing care with pregnancy testing and continuous support throughout your journey.",
-    icon: Baby,
-  },
-];
+const treatmentIcons: Record<string, LucideIcon> = {
+  messageCircle: MessageCircle,
+  clipboardCheck: ClipboardCheck,
+  calendarCheck: CalendarCheck,
+  microscope: Microscope,
+  baby: Baby,
+};
 
-const repeatedSteps = [
-  ...treatmentSteps,
-  ...treatmentSteps,
-];
+const repeatedSteps = [...treatmentProcessData.steps, ...treatmentProcessData.steps];
 
 export default function TreatmentProcess() {
   const reduceMotion = useReducedMotion();
@@ -104,22 +73,21 @@ export default function TreatmentProcess() {
             <span className="h-[2px] w-9 rounded-full bg-[#8c5b53]" />
 
             <span className="text-sm font-bold tracking-wide text-[#8c5b53] sm:text-base">
-              Our Treatment Process
+              {treatmentProcessData.eyebrow}
             </span>
 
             <span className="h-[2px] w-9 rounded-full bg-[#8c5b53]" />
           </div>
 
           <h2 className="text-3xl font-bold lg:max-w-3xl max-w-2xl leading-tight tracking-tight text-[#242333] sm:text-4xl lg:text-5xl">
-            A Simple & Supportive{" "}
+            {treatmentProcessData.title}{" "}
             <span className="text-[#8c5b53]">
-              IVF Journey
+              {treatmentProcessData.highlight}
             </span>
           </h2>
 
           <p className="mx-auto mt-4 lg:max-w-3xl max-w-2xl text-sm leading-7 text-[#696571] sm:text-base lg:text-lg">
-            A step-by-step, personalized process to guide you
-            from consultation to a successful pregnancy.
+            {treatmentProcessData.description}
           </p>
         </motion.div>
 
@@ -135,7 +103,7 @@ export default function TreatmentProcess() {
           <button
             type="button"
             className="treatment-prev absolute -left-1 top-1/2 z-20 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-[#8c5b53] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#70453f] disabled:opacity-40 sm:-left-3 sm:h-12 sm:w-12 lg:-left-5"
-            aria-label="Previous treatment step"
+            aria-label={treatmentProcessData.previousStepLabel}
           >
             <ArrowLeft size={21} />
           </button>
@@ -144,7 +112,7 @@ export default function TreatmentProcess() {
           <button
             type="button"
             className="treatment-next absolute -right-1 top-1/2 z-20 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-[#8c5b53] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#70453f] disabled:opacity-40 sm:-right-3 sm:h-12 sm:w-12 lg:-right-5"
-            aria-label="Next treatment step"
+            aria-label={treatmentProcessData.nextStepLabel}
           >
             <ArrowRight size={21} />
           </button>
@@ -194,12 +162,15 @@ export default function TreatmentProcess() {
                 },
               }}
               onSlideChange={(swiper) => {
-                setActiveIndex(swiper.realIndex % treatmentSteps.length);
+                setActiveIndex(swiper.realIndex % treatmentProcessData.steps.length);
               }}
               className="!pb-12 !pt-5 lg:max-w-[1400px] !overflow-hidden"
             >
               {repeatedSteps.map((step, index) => {
-                const Icon = step.icon;
+                const Icon = treatmentIcons[step.icon];
+                if (!Icon) {
+                  throw new Error(`Unknown treatment icon: ${step.icon}`);
+                }
 
                 return (
                   <SwiperSlide key={`${step.number}-${index}`}>
@@ -247,11 +218,11 @@ export default function TreatmentProcess() {
 
         {/* Slider pagination */}
         <div className="mt-1 flex items-center justify-center gap-2">
-          {treatmentSteps.map((step, index) => (
+          {treatmentProcessData.steps.map((step, index) => (
             <button
               key={step.number}
               type="button"
-              aria-label={`Go to treatment step ${index + 1}`}
+              aria-label={`${treatmentProcessData.paginationLabel} ${index + 1}`}
               aria-current={activeIndex === index ? "true" : undefined}
               onClick={() => {
                 const swiperElement = document.querySelector(
