@@ -235,7 +235,7 @@ export default function Footer() {
           transition={{ duration: reduceMotion ? 0 : 0.5 }}
           className="mt-12 flex flex-col gap-2 border-t border-white/20 pt-5 text-sm text-[#f7f0e9]/75 sm:mt-14 sm:flex-row sm:items-center sm:justify-between sm:pt-6"
         >
-          <p>{copyright} {poweredBy}</p>
+          <p className="mx-auto">{copyright} {poweredBy}</p>
         </motion.div>
       </div>
     </footer>
